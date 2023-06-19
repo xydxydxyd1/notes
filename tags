@@ -4,13 +4,12 @@
 !_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
 !_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
 !_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
-!_TAG_PROC_CWD	/home/rice/Documents/notes/	//
+!_TAG_PROC_CWD	/home/eric/Documents/notes/	//
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	//
 Current Progress	typescript/main.tex	/^\\chapter{Current Progress}%$/;"	c
-Expressions and Operators	typescript/main.tex	/^\\chapter{Expressions and Operators}%$/;"	c
 Operators	typescript/chapters/expressions_and_operators.tex	/^\\section{Operators}$/;"	s
+Tuples	typescript/chapters/data_types.tex	/^\\section{Tuples}$/;"	s
 cha:Current_Progress	typescript/main.tex	/^\\label{cha:Current_Progress}$/;"	l
-cha:Expressions_and_Operators	typescript/main.tex	/^\\label{cha:Expressions_and_Operators}$/;"	l
