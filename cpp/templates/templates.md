@@ -3,18 +3,61 @@ Template Parameters
 
 Template parameters can be non-type, type, or template.
 
-When template parameters are received (i.e. you put stuff in angle brackets),
-a *specialization* of the template is given (See [Partial Specialization](#partial-specialization)).
-
-When needed, the specialization is *instantiated.* I'm not worrying too much
-about it.
-
 ```cpp
 template <parameter_list> require_clause* declaration;
 template <parameter-list> concept concept-name = constraint-expression;
 ```
 *require_clause* is optional; see [Constraints and Concepts](#constraints-and-concepts)
 
+Specialization and Instantiation
+--------------------------------
+
+When template parameters are received (i.e. a definition with things in angle brackets),
+it is a *specialization* of the template given
+
+When used like normal, the specialization is *instantiated.* I'm not worrying too much
+about it.
+
+```cpp
+template <typename T>
+struct Struct
+{
+
+     T x;
+};
+
+template<>
+struct Struct <int> // explicit specialization
+{
+
+    //code
+};
+
+template struct Struct<char>;	// explicit instantiation
+
+int main()
+{
+   Struct <int> s; // use explicit specialization
+   Struct <float> r; // implicit instantiation
+
+```
+
++ TODO: Test explicit instantiation declaration after studying linkage <26-06-23, xydxydxyd1> +
+
+- Explicit instantiation is used to control the place the template is instantiated
+- `extern` explicit instantiation declaration is for using a single explicit
+instantiation somewhere, instead of implicitly declaring it all the time.
+- Also checkout [Partial Specialization](#partial-specialization).
+- Example from [Stack Overflow](https://stackoverflow.com/questions/3914642/difference-between-instantiation-and-specialization-in-c-templates)
+
+Class Templates
+===============
+
+Template Instantiation
+----------------------
+
+A class template by itself is nothing; no code is generated. Code appears
+when the template is *instantiated* (note: not specialized).
 
 Type Traits
 ===========
