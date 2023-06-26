@@ -1,11 +1,19 @@
-General
-=======
+Template Parameters
+===================
 
-Traits and concepts beef up generic programming by placing restrictions
-on template arguments.
+Template parameters can be non-type, type, or template.
 
-A *concept* models semantic categories, whereas a *type trait* models
-syntactic categories.
+When template parameters are received (i.e. you put stuff in angle brackets),
+a *specialization* of the template is given (See [Partial Specialization](#partial-specialization)).
+
+When needed, the specialization is *instantiated.* I'm not worrying too much
+about it.
+
+```cpp
+template <parameter_list> require_clause* declaration;
+template <parameter-list> concept concept-name = constraint-expression;
+```
+*require_clause* is optional; see [Constraints and Concepts](#constraints-and-concepts)
 
 
 Type Traits
@@ -28,6 +36,19 @@ Partial Specialization
 For customizing a template for specific sets of template arguments
 
 ```cpp
+	template<typename T1, typename T2>
+	class is_pointer
+	{
+	public:
+		static const bool value = false;
+	};
+
+	template<typename T2>
+	class is_pointer<T2*, T2>
+	{
+	public:
+		static const bool value = true;
+	};
 
 ```
 
